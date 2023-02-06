@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<style>
+
+@media only screen and (max-width: 768px) {
+  #felino {
+            font-size: 21px;
+        }
+}
+
+@media only screen and (min-width: 769px){
+  #felino {
+            font-size: 26px;
+        }
+}
+</style>
+{% endblock %}
+
+{% block hero %}
+<section id="hero" class="clearfix">
+    <div class="container d-flex h-100">
+        <div class="row justify-content-center align-self-center">
+            <br/>
+            <h1 class="display-4">Pawpeds G1</h1>
+            <br/>
+            <div class="row px-1">
+                <div class="col-lg-6">
+                    <blockquote class="blockquote p-lg-5">
+                        W kwietnie 2020 roku ukończyłam 6- tygodniowy intensywny kurs Pawpeds. Kurs ten ma na celu
+                        poprawę obchodzenia się z kotami i ich hodowania. Dzięki temu zdobyłam specjalistyczną wiedzę
+                        tak potrzebną w pracy hodowcy. To pozwala mi dzielić się nią z przyszłymi właścicielami moich
+                        puchatych kocich dzieci. Podczas tych wymagających tygodni dowiedziałam się mnóstwo na temat
+                        kotów, ras, umaszczenia, ich budowy, chorób, programów hodowlanych i zdrowotnych, a także spraw
+                        dotyczących prowadzenia hodowli i udziału w wystawach.
+                    </blockquote>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img class="img-fluid" alt="dyplom"
+                         src="{% static 'assets/img/diplomas/32242885_1796106857108277_2913589574611501056_n.gif' %}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

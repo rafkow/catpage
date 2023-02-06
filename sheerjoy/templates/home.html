@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link href="{% static 'assets/css/custom.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block hero %}
+<section id="hero" class="clearfix">
+    <div class="container d-flex h-100">
+        <div class="row justify-content-center align-self-center">
+            <div class="col-md-6 intro-info order-md-first order-last">
+                <h2><span>{{ citation.name }}</span></h2>
+                <div>
+                    <a href="https://www.facebook.com/Hodowla-Kot%C3%B3w-Syberyjskich-Sheer-JoyPl-1937100613234165/"
+                       class="facebook"><h3>Zobacz nasz profil na</h3><h4>Facebooku <i class="fa fa-facebook"></i></h4>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 intro-img order-md-last order-first">
+                <img src="{% static 'assets/img/simon_cat_web.png' %}" alt="cat_with_computer" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block content %}
+
+<section id="about" class="about">
+    <div class="container">
+        <div class="row">
+            {% if about_pictures %}
+            <div class="col-lg-5 col-md-6">
+                <div class="about-img">
+                    <a href="{% url 'sheerjoy:gallery' %}">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                {% for picture in about_pictures %}
+                                <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter }}"></li>
+                                {% endfor %}
+                            </ol>
+                            <div class="carousel-inner">
+                                {% for picture in about_pictures %}
+                                <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %} }}">
+                                    <img src="{{ picture.image_min.url }}" alt="{{ picture.name }}" class="img-fluid">
+                                </div>
+
+                                {% endfor %}
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                               data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                               data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </a>
+                </div>
+                <a href="{% url 'sheerjoy:gallery' %}"><h3 class="text-center">zobacz całą galerię...</h3></a>
+            </div>
+            {% endif %}
+            <div class="col-lg-7 col-md-6">
+                <div class="about-content">
+                    <h2>O hodowli</h2>
+                    <h3> Z kotami do czynienia miałam już od wczesnego dzieciństwa, jako że wychowałam się na wsi. Były
+                        to jednak koty na pół dzikie, takie, które podchodziły bliżej tylko, kiedy pachniało jedzenie.
+                        Pierwszego kociego mieszkańca naszego domu powitaliśmy w dniu I Komunii Świętej mojej starszej
+                        córki- była to ruda, piękna i złośliwa persiczka. </h3>
+                    <p> To wtedy zakochałam się w kotach. Gdy po 8 latach jej zabrakło, kupiliśmy britkę,
+                        którą, jak się po miesiącu okazało,dostaliśmy „w pakiecie” z FIP-em. Po kolejnym miesiącu
+                        leczenia, wizyt u weterynarzy, ściągania płynu i innych traumatycznych przeżyć, musieliśmy ją
+                        pożegnać. Wtedy też postanowiłam nie angażować się już w życie z kotami domowymi. Mieliśmy
+                        zawsze w obejściu jednego lub kilka półdzikusków, o które dbaliśmy. To miało wystarczyć. </p>
+                    <p> Wystarczyło. Na całe sześć tygodni. Kiedy pewnego dnia przeglądałam strony z kotami, zobaczyłam
+                        JĄ- Gaję. I już wiedziałam, że to na nią czekałam. Od niej zaczęła się nie tylko moja miłość do
+                        kotów syberyjskich- najwspanialszych przedstawicieli kotów, ale i zainteresowanie wystawami,
+                        pokazami, a w końcu też hodowlą. Początkowo próbowałam sił jako współhodowca, jednak wkrótce
+                        zapragnęłam mieć coś tylko swojego. I tak powstała domowa, pełna czystej miłości i radości
+                        hodowla Sheer Joy*PL. </p>
+                    <ul>
+                        <li><i class="ion-android-checkmark-circle"></i>Nasze koty to pełnoprawni domownicy,
+                            rozpieszczani, otaczani troską i miłością i wspaniale zsocjalizowani.
+                        </li>
+                        <li><i class="ion-android-checkmark-circle"></i>Koty w naszej hodowli są zdrowe, regularnie
+                            badane, wolne od FeLV, FiV. Opiekę weterynaryjną nad nimi sprawuje gabinet weterynaryjny
+                            ‘Brzoza’ w Brzozie Bydgoskiej oraz klinika weterynaryjna ‘Kora’ w Bydgoszczy.
+                        </li>
+                        <li><i class="ion-android-checkmark-circle"></i>Hodowla jest członkiem klubu IBSCC pod
+                            auspicjami WCF (World Cat Federation), międzynarodowej organizacji felinologicznej.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="call-to-action" class="call-to-action wow fadeInUp">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-1 d-sm-none d-lg-block">
+                <img class="img-fluid " alt="dyplom"
+                     src="{% static 'assets/img/diplomas/32242885_1796106857108277_2913589574611501056_n.gif' %}"/>
+            </div>
+            <div class="col-lg-7 text-center text-lg-left">
+                <h3 class="cta-title">Pawpeds</h3>
+                <p class="cta-text pl-3"> Dzięki kursowi Pawpeds G1 znacznie pogłębiłam swoją wiedzę na temat posiadania
+                    kota i prowadzenia hodowli.</p>
+            </div>
+            <div class="col-lg-4 cta-btn-container text-center">
+                <a class="cta-btn align-middle" href="{% url 'sheerjoy:pawpeds' %}">czytaj więcej</a>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-8">
+                <h3 class="cta-title text-center text-lg-right">Szkolenia i certyfikaty</h3>
+                <p class="cta-text pl-3"> Cały czas poszerzam wiedzę o prowadzeniu hodowlii nie tylko z życia ale i
+                    profesjonalnych szkoleń </p>
+                <p class="cta-text pl-3"> Zobacz moje certyfikaty i odznaczenia... </p>
+            </div>
+            <div class="col-lg-3 cta-btn-container text-center text-lg-left order-lg-first float-lg-left">
+                <a class="cta-btn align-middle " href="{% url 'sheerjoy:dyplomy' %}">czytaj więcej</a>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-lg-8 text-center text-lg-left">
+                <h3 class="cta-title">Felinoterapia</h3>
+                <p class="cta-text pl-3"> Ukończyłam kurs felinoterapii, terapii kontaktowej z wykorzystaniem
+                    kotów...</p>
+            </div>
+            <div class="col-lg-4 cta-btn-container text-center">
+                <a class="cta-btn align-middle" href="{% url 'sheerjoy:felinoterapia' %}">czytaj więcej</a>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-8">
+                <h3 class="cta-title text-center text-lg-right">Seminaria Felinologiczne</h3>
+                <p class="cta-text pl-3"> Seminaria felinologiczne to istna kopalnia informacji zarówno teoretycznych,
+                    jaki praktycznych. Wykłady i rozmowy ze znakomitymi profesorami i znawcami kotów pozwalają mi
+                    spojrzeć na pewne aspekty prowadzenia hodowli i postępowania wobec moich kocich domowników z innej,
+                    szerszej perspektywy </p>
+            </div>
+            <div class="col-lg-3 cta-btn-container text-center text-lg-left order-lg-first float-lg-left">
+                <a class="cta-btn align-middle " href="{% url 'sheerjoy:seminaria' %}">czytaj więcej</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="services" class="services section-bg">
+    <div class="container">
+
+        <header class="section-header">
+            <h3>Stowarzyszenia</h3>
+            <p>Nasza hodowla jest członkiem organizacji </p>
+        </header>
+
+        <div class="row">
+
+            <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
+                <div class="box">
+                    <div class="icon" style="background: #fceef3;"><img src="{% static 'assets/img/ibscc.png' %}"
+                                                                        class="img-fluid"></div>
+                    <h4 class="title"><a href="http://ibscc.pl/">IBSCC</a></h4>
+                    <p class="description">International British Shorthair Cat Club</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
+                <div class="box">
+                    <div class="icon" style="background: #fff0da;"><img src="{% static 'assets/img/wcf.png' %}"
+                                                                        class="img-fluid"></div>
+                    <h4 class="title"><a href="http://www.wcf-online.de/">WCF</a></h4>
+                    <p class="description">World Cat Federation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

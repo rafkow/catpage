@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<style>
+    @media (min-width: 576px) {
+        .table-kot {
+            font-size: 24px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .table-kot {
+            font-size: 20px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .table-kot {
+            font-size: 18px;
+        }
+    }
+
+
+</style>
+{% endblock %}
+
+{% block content %}
+<section id="incoming" class="services section-bg" style="padding-top: 60px;">
+    <div class="container">
+
+        <div class="card wow bounceInUp border-primary m-3">
+            <div class="card-header">
+                <h5 class="card-title">{{ litter }}</h5>
+            </div>
+            <div class="card-body py-5">
+                <div class="row">
+                    <div class="col-md-6 bg-light p-0">
+                        <div class="rounded bg-light">
+                            {% if father.image %}
+                            <img src="{{ mother.image.url }}" alt="cat_mother_image" class="img-fluid bg-light">
+                            {% endif %}
+                        </div>
+                        <p> {{ litter.mother.name }}</p>
+                    </div>
+                    <div class="col-md-6 bg-light p-0">
+                        <div class="rounded bg-light">
+                            {% if father.image %}
+                            <img src="{{ father.image.url }}" alt="cat_father_image" class="img-fluid bg-light">
+                            {% endif %}
+                        </div>
+                        <p> {{ litter.father.name }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table table-hover table-kot">
+                            <tbody>
+                            {% if litter.birth %}
+                            <tr>
+                                <td>data urodzenia</td>
+                                <td>{{ litter.birth }}</td>
+                            </tr>
+                            {% endif %}
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+        {% for kitten in litter.children.all %}
+
+        <div class="card border border-primary mx-1">
+            <img class="card-img-top img-fluid" src="{{ kitten.image.url }}" alt="kicius">
+            <div class="card-body">
+                <h4 class="card-title">{{ kitten.name }}</h4>
+                <p class="card-text"></p>
+                <p class="card-text"><small class="text-muted"></small></p>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
+

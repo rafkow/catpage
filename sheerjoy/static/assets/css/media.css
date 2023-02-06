@@ -1,0 +1,14 @@
+@media (min-width: 575px) {
+        #map {
+            width: 399px;
+            height: 299px;
+        }
+    }
+
+    @media (min-width: 767px) {
+        #map {
+            width: 599px;
+            height: 399px;
+        }
+    }
+

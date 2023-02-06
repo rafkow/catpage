@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block head %}
+<style>
+    @media (min-width: 576px) {
+        .table-kot {
+            font-size: 24px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .table-kot {
+            font-size: 20px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .table-kot {
+            font-size: 18px;
+        }
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<section id="kotki" class="services section-bg p-4">
+    <div class="containre" style="height: 50px;"></div>
+    <div class="container">
+        <div class="container justify-content-center align-self-center d-flex">
+            <img src="{% static 'assets/img/cats/kitty_foot.png' %}" alt="kitty-foot" class="d-inline img-fluid">
+            <h1 class="d-inline display-4"> Kotki </h1>
+            <img src="{% static 'assets/img/cats/kitty_foot.png' %}" alt="kitty-feet" class="d-inline img-fluid">
+        </div>
+
+        {% for cat in kitten %}
+        <div class="card wow bounceInUp border-primary m-3">
+            <div class="card-header">
+                <h5 class="card-title">{{cat}}</h5>
+            </div>
+            <div class="card-body py-5">
+                <div class="row">
+                    {% if cat.image %}
+                    <div class="col-md-6 bg-light p-0">
+                        <div class="rounded bg-light">
+                            <img src="{{ cat.image.url }}" alt="cat_image" class="img-fluid bg-light">
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="col-md-6">
+                        <table class="table table-hover table-kot">
+                            <tbody>
+                            {% if cat.name %}
+                            <tr>
+                                <td>imię</td>
+                                <td>{{cat.name}}</td>
+                            </tr>
+                            {% endif %}
+                            {% if cat.color %}
+                            <tr>
+                                <td>kolor</td>
+                                <td>{{cat.color}}</td>
+                            </tr>
+                            {% endif %}
+                            {% if cat.description %}
+                            <tr>
+                                <td>opis</td>
+                                <td>{{cat.description}}</td>
+                            </tr>
+                            {% endif %}
+                            {% if cat.birth %}
+                            <tr>
+                                <td>ma</td>
+                                <td>{{cat.life_time}}</td>
+                            </tr>
+                            {% endif %}
+                            {% if cat.mother %}
+                            <tr>
+                                <td>matka</td>
+                                <td>{{cat.mother}}</td>
+                            </tr>
+                            {% endif %}
+                            {% if cat.father %}
+                            <tr>
+                                <td>ojciec</td>
+                                <td>{{cat.father}}</td>
+                            </tr>
+                            {% endif %}
+                            {% if cat.title %}
+                            <tr>
+                                <td>tytuł</td>
+                                <td>{{cat.title.name}}</td>
+                            </tr>
+                            {% endif %}
+                            {% if cat.litter %}
+                            <tr>
+                                <td>miotu</td>
+                                <td>{{cat.litter}}</td>
+                            </tr>
+                            {% endif %}
+                            {% if cat.weight %}
+                            <tr>
+                                <td>waży</td>
+                                <td>{{cat.weight}} kg</td>
+                            </tr>
+                            {% endif %}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section id="kocury" class="services section-bg p-4">
+    <div class="container">
+        <div class="container justify-content-center align-self-center d-flex">
+            <img src="{% static 'assets/img/cats/kitty_foot.png' %}" alt="kitty-foot" class="d-inline img-fluid">
+            <h1 class="d-inline display-4"> Kocury </h1>
+            <img src="{% static 'assets/img/cats/kitty_foot.png' %}" alt="kitty-foot" class="d-inline img-fluid">
+        </div>
+
+        {% for cat in cats %}
+        <div class="card wow bounceInUp border-primary m-3">
+            <div class="card-header">
+                <h5 class="card-title">{{cat}}</h5>
+            </div>
+            <div class="card-body py-1">
+                <div class="row">
+                    {% if cat.image %}
+                    <div class="col-md-6 bg-light p-0">
+                        <div class="rounded bg-light">
+                            <img src="{{ cat.image.url }}" alt="cat_image" class="img-fluid bg-light">
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="col-md-6">
+                        <table class="table table-hover table-kot">
+                            <tbody>
+                            {% if cat.name %}
+                            <tr>
+                                <td>imię</td>
+                                <td>{{cat.name}}</td>
+                            </tr>
+                            {% endif %}
+                            {% if cat.color %}
+                            <tr>
+                                <td>kolor</td>
+                                <td>{{cat.color}}</td>
+                            </tr>
+                            {% endif %}
+                            {% if cat.description %}
+                            <tr>
+                                <td>opis</td>
+                                <td>{{cat.description}}</td>
+                            </tr>
+                            {% endif %}
+                            {% if cat.birth %}
+                            <tr>
+                                <td>ma</td>
+                                <td>{{cat.life_time}}</td>
+                            </tr>
+                            {% endif %}
+                            {% if cat.mother %}
+                            <tr>
+                                <td>matka</td>
+                                <td>{{cat.mother}}</td>
+                            </tr>
+                            {% endif %}
+                            {% if cat.father %}
+                            <tr>
+                                <td>ojciec</td>
+                                <td>{{cat.father}}</td>
+                            </tr>
+                            {% endif %}
+                            {% if cat.title %}
+                            <tr>
+                                <td>tytuł</td>
+                                <td>{{cat.title.name}}</td>
+                            </tr>
+                            {% endif %}
+                            {% if cat.litter %}
+                            <tr>
+                                <td>miotu</td>
+                                <td>{{cat.litter}}</td>
+                            </tr>
+                            {% endif %}
+                            {% if cat.weight %}
+                            <tr>
+                                <td>waży</td>
+                                <td>{{cat.weight}} kg</td>
+                            </tr>
+                            {% endif %}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
+

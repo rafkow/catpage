@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<style>
+
+@media only screen and (max-width: 768px) {
+  #felino {
+            font-size: 21px;
+        }
+}
+
+@media only screen and (min-width: 769px){
+  #felino {
+            font-size: 26px;
+        }
+}
+
+</style>
+{% endblock %}
+
+{% block hero %}
+<section id="hero" class="clearfix">
+<div class="container d-flex h-100">
+    <div class="row justify-content-center align-self-center">
+            <br/>
+            <h1 class="display-4">Felinoterapia</h1>
+            <br/>
+            <div id="felino" class="text-justify px-4">
+                Ukończyłam kurs felinoterapii, terapii kontaktowej z wykorzystaniem kotów. Taka terapia powoduje
+                powstanie
+                silnej więzi pomiędzy człowiekiem, a kotem, co z kolei jest w stanie zasadniczo poprawić zdrowie
+                człowieka,
+                szczególnie w sferze emocjonalnej i motorycznej. Kontakt z kotem daje pacjentom, zarówno tym małym, jak
+                i
+                starszym, poczucie bliskości, bezpieczeństwa, budzi opiekuńczość i odsuwa poczucie osamotnienia. Kurs
+                ten
+                pozwolił minie tylko dowiedzieć sie więcej o tych niezwykłych zwierzętach, jakimi są koty, ale też
+                dzięki
+                niemu będę mogła pomagać osobom chorym i starszym.
+            </div>
+        </div>
+</div>
+</section>
+{% endblock %}

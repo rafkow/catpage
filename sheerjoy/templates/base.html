@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pl">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164034591-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-164034591-1');
+    </script>
+
+    <title>Hodowla Kotów Syberyjskich SheerJoy*PL</title>
+    <meta name="descriptison"
+          content="domowa Hodowla Kotów Syberyjskich SheerJoy SheerJoy*PL koty rasowe Łabiszyn  ">
+    <meta name="keywords" content="domowa Hodowla Kotów Syberyjskich SheerJoy kot koty kotki syberyjskie cats ">
+    {% load  %}
+
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/ikonka.png' %}" rel="icon">
+    <link href="{% static 'assets/img/ikonka.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/media.css' %}" rel="stylesheet">
+
+    <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/wow/wow.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+
+    {% block head %}
+
+    {% endblock %}
+</head>
+
+<body>
+
+
+<header id="header">
+    <div class="container">
+        <div class="float-left">
+            <a href="{% url 'sheerjoy:index' %}">
+                <img src="{% static 'assets/img/baner2_100.png' %}" class="img-fluid" style="max-width: 200px; height: auto;" alt="ikonka">
+            </a>
+        </div>
+
+        <nav class="main-nav float-right d-none d-lg-block">
+            <ul>
+                <li class="active"><a href="{% url 'sheerjoy:index' %}">hodowla</a></li>
+                <li class="drop-down"><a href="{% url 'sheerjoy:koty' %}">nasze koty</a>
+                    <ul>
+                        <li><a href="{% url 'sheerjoy:koty' %}#kotki">kotki</a></li>
+                        <li><a href="{% url 'sheerjoy:koty' %}#kocury">kocury</a>
+                        <li class="inactive"><a href="#">kocięta</a>
+                    </ul>
+                </li>
+                <li><a href="{% url 'sheerjoy:gallery' %}">galeria</a></li>
+                <li class="drop-down"><a href="{% url 'sheerjoy:mioty' %}">mioty</a>
+                    <ul>
+                        <li><a href="{% url 'sheerjoy:mioty' %}#spodziewane">spodziewane</a></li>
+                        <li><a href="{% url 'sheerjoy:mioty' %}#mioty">poprzednie</a>
+                    </ul>
+                </li>
+                <li><a href="#kontakt">kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="{% static 'assets/vendor/mobile-nav/mobile-nav.js' %}"></script>
+</header>
+
+{% block hero %}
+
+{% endblock %}
+
+<!-- End Hero -->
+
+<main id="main">
+    {% block content %}
+
+    {% endblock %}
+</main>
+<!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="section-bg">
+    <div id="kontakt" class="footer-top">
+    <header class="section-header">
+            <h3 class="section-title">Kontakt</h3>
+    </header>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8">
+                    <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2404.109601995371!2d17.920392215823384!3d52.946450879897064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb20f6b147e7a87b5!2sHodowla%20Kot%C3%B3w%20Syberyjskich%20SheerJoy*2APL!5e0!3m2!1spl!2spl!4v1588615082808!5m2!1spl!2spl"
+                            frameborder="0" height="400" style="border:0; width:inherit" allowfullscreen=""
+                            aria-hidden="false" tabindex="0">
+                    </iframe>
+                </div>
+
+                <div class="col-md-4 p-3">
+                    <div class="info d-flex flex-column justify-content-center" data-aos="fade-right">
+                        <div class="address">
+                            <i class="icofont-google-map"></i>
+                            <h4>Adres:</h4>
+                            <p>Łabiszyn Wieś 20A</p>
+                            <p>89-210 Łabiszyn</p>
+                        </div>
+
+                        <div class="email">
+                            <i class="icofont-envelope"></i>
+                            <h4>Email:</h4>
+                            <p>sheerjoypl@gmail.com</p>
+                        </div>
+
+                        <div class="phone">
+                            <i class="icofont-phone"></i>
+                            <h4>Telefon:</h4>
+                            <p>+48 600 302 663</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="copyright">
+            &copy; Copyright <strong>Hodowla kotów syberyjskich SheerJoy*PL</strong>
+        </div>
+        <div class="credits">
+            Designed by Rafał Kowalewski
+        </div>
+    </div>
+</footer><!-- End  Footer -->
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+</html>

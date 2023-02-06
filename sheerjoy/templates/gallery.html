@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block hero %}
+
+{% endblock %}
+
+{% block content %}
+<section id="portfolio" class="portfolio section-bg">
+    <div class="container">
+
+        <header class="section-header">
+            <h3 class="section-title">Galeria</h3>
+        </header>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <ul id="portfolio-flters">
+                    <li data-filter="*" class="filter-active">Wszystkie</li>
+                    {% for hashtag in hashtags %}
+                    <li data-filter=".filter-{{ hashtag.name }}">#{{ hashtag.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="row portfolio-container">
+            {% for photo in photos %}
+            <div class="col-lg-4 col-md-6 portfolio-item {{ photo.get_filters }}">
+                <div class="portfolio-wrap">
+                    <img src="{{ photo.image_min.url }}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        {% if photo.name %}
+                            <h4 class="text-white">{{ photo.name }}</h4>
+                        {% endif %}
+                        <p>{{ photo.get_hashtags }}</p>
+                        <div>
+                            <a href="{{ photo.image.url }}" data-gall="portfolioGallery"
+                               {% if photo.name %}
+                                    title="{{ photo.name }}"
+                               {% endif %}
+                               class="link-preview venobox"><i class="ion ion-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section><!-- End Portfolio Section -->
+
+{% endblock %}
