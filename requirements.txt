@@ -1,0 +1,15 @@
+asgiref
+beautifulsoup4
+Django==3.2.4
+django-htmlmin
+gunicorn
+html5lib
+Pillow
+psycopg2-binary
+mysqlclient
+pytz
+six
+soupsieve
+sqlparse
+uWSGI
+webencodings

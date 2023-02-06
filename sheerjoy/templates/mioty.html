@@ -30,92 +30,12 @@
 
 
 
-{% if excepted_litters %}
-
-<section id="spodziewane" class="services section-bg pb-2" style="padding-top: 60px;">
+<section id="incoming" class="services section-bg" style="padding-top: 60px;">
     <div class="container">
-        <h1 class="display-4 text-center">Spodziewamy się</h1>
-        {% for litter in excepted_litters %}
-        <div class="card wow bounceInUp border-primary m-3">
-            <div class="card-header">
-                przewidywany termin miotu {{ litter }}
-            </div>
-            <div class="card-body py-5">
-                <div class="row">
-                    <div class="col-md-6 bg-light p-0">
-                        <div class="rounded bg-light">
-                            {% if litter.mother.image %}
-                            <img src="{{ litter.mother.image.url }}" alt="cat_mother_image" class="img-fluid bg-light">
-                            {% endif %}
-                        </div>
-                        <p> {{ litter.mother.name }}</p>
-                    </div>
-                    <div class="col-md-6 bg-light p-0">
-                        <div class="rounded bg-light">
-                            {% if litter.father.image %}
-                            <img src="{{ litter.father.image.url }}" alt="cat_father_image" class="img-fluid bg-light">
-                            {% endif %}
-                        </div>
-                        <p> {{ litter.father.name }}</p>
-                    </div>
-                    <div class="col-md-6">
-                        <table class="table table-hover table-kot">
-                            <tbody>
-                            {% if litter.name %}
-                            <tr>
-                                <td>{{cat.name}}</td>
-                            </tr>
-                            {% endif %}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
+
+
+    <p>hej</p>
     </div>
 </section>
-
-{% endif %}
-
-<section id="mioty" class="services section-bg pb-2" style="padding-top: 60px;">
-    <div class="container">
-        {% for litter in litters %}
-        <a href="{% url 'sheerjoy:miot' litter.id %}">
-            <div class="card wow bounceInUp m-3">
-                <div class="card-header">{{ litter }}</div>
-                <div class="card-body py-5">
-                    <div class="row">
-                        <div class="col-md-6 bg-light p-0">
-                            <div class="rounded bg-light">
-                                <img src="{{ litter.mother.image.url }}" alt="cat_mother_image" class="img-fluid bg-light">
-                            </div>
-                            <p> {{ litter.mother.name }}</p>
-                        </div>
-                        <div class="col-md-6 bg-light p-0">
-                            <div class="rounded bg-light">
-                                <img src="{{ litter.father.image.url }}" alt="cat_father_image" class="img-fluid bg-light">
-                            </div>
-                            <p> {{ litter.father.name }}</p>
-                        </div>
-                        <div class="col-md-6">
-                            <table class="table table-hover table-kot">
-                                <tbody>
-                                {% if litter.name %}
-                                <tr>
-                                   <td>{{cat.name}}</td>
-                                </tr>
-                                {% endif %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        {% endfor %}
-    </div>
-</section>
-
 {% endblock %}
 

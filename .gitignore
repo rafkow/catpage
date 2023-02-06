@@ -2,10 +2,8 @@
 /shelf/
 /workspace.xml
 *.pyc
-/media/gallery/*
-/media/home/*
 
-
+/media/*
 
 /.idea/
 /venv/

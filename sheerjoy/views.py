@@ -32,13 +32,13 @@ def koty(request):
 
 def mioty(request):
     template = loader.get_template("mioty.html")
-    excepted_litters = models.Litter.objects.filter(birth__gte=datetime.today())
-    litters = models.Litter.objects.exclude(birth__gte=datetime.today()).order_by('-birth')
-    context = {
-        'excepted_litters': excepted_litters,
-        'litters': litters
-    }
-    return HttpResponse(template.render(context, request))
+    # excepted_litters = models.Litter.objects.filter(birth__gte=datetime.today())
+    # litters = models.Litter.objects.exclude(birth__gte=datetime.today()).order_by('-birth')
+    # context = {
+    #     'excepted_litters': excepted_litters,
+    #     'litters': litters
+    # }
+    return HttpResponse(template.render({}, request))
 
 
 def miot(request, id):
